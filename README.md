@@ -1,7 +1,7 @@
 # Aleo Token Site
 
-- Aleo testnet3 상에 배포한 `token_112233.aleo` 프로그램을 이용할 수 있는 프론트엔드입니다.
-- [token_112233.aleo](https://explorer.hamp.app/program?id=token_112233.aleo)
+- Aleo testnet3 상에 배포한 `token_whoru.aleo` 프로그램을 이용할 수 있는 프론트엔드입니다.
+- [token_whoru.aleo](https://explorer.hamp.app/program?id=token_whoru.aleo)
 
 ## 기능 구현
 - [x] Public Mint

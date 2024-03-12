@@ -7,10 +7,11 @@ export const MintPublic = () => {
   const { requestTransaction, publicKey } = useWallet();
   const [receiverAddress, setReceiverAddress] = useState<string>("");
   const [amount, setAmount] = useState<number>(0);
+  const [fee, setFee] = useState<number>(1000000);
 
   const handleMintPublic = async () => {
     const mint_public_transition = new Transition(
-      "token_112233.aleo",
+      "token_whoru.aleo",
       "mint_public",
       [receiverAddress, amount.toString() + "u64"]
     );
@@ -19,7 +20,7 @@ export const MintPublic = () => {
       publicKey!,
       WalletAdapterNetwork.Testnet,
       [mint_public_transition],
-      1000000, // set your desired fee
+      fee, // set your desired fee
       false
     );
 
@@ -57,6 +58,15 @@ export const MintPublic = () => {
           type="number"
           placeholder="number"
           onChange={(e) => setAmount(Number(e.target.value))}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Token Fee:</Form.Label>
+        <Form.Control 
+          type="number"
+          placeholder="fee"
+          onChange={(e) => setFee(Number(e.target.value))}
+          defaultValue={fee}
         />
       </Form.Group>
       <Button onClick={handleMintPublic}>✨ Mint *Public* Token</Button>
